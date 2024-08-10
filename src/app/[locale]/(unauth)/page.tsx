@@ -1,8 +1,16 @@
 import React from 'react'
 
+import { Navbar } from '@/components/Home/Navbar'
+
 export default function Home() {
   //---------------------
   //   RENDER
   //---------------------
-  return <div className='text-red-300'>sssssssssssss</div>
+  return (
+    <div>
+      <div>
+        <Navbar />
+      </div>
+    </div>
+  )
 }
