@@ -18,7 +18,8 @@ export const Navbar = () => {
           <div>ตั้งกระทู้</div>
           <div>คอมมูนิตี้</div>
           <div>
-            <LoginButton images="" onClick={() => {}} />
+          <i className="fa-solid fa-bars"></i>
+            <LoginButton images="" icon='fa-solid fa-bars' onClick={() => {}} />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 interface LoginButtonProps {
   onClick: () => void
+  icon : string
   images: string
 }
 
@@ -24,9 +25,7 @@ export const LoginButton = (props: LoginButtonProps) => {
       {isOpen && <LoginModal />}
       <div onClick={() => setIsOpen(!isOpen)} onKeyDown={() => setIsOpen(!isOpen)} className="flex gap-[5px] justify-center items-center">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="black" className="size-5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
+        <i className={classNames(props.icon)}></i>
         </div>
         <div className="bg-black rounded-full w-[32px] h-[32px] border border-[#DDDDDD]"></div>
       </div>
