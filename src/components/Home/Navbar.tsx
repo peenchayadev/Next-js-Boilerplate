@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { LoginButton } from './LoginButton'
 
 export const Navbar = () => {
@@ -12,7 +13,7 @@ export const Navbar = () => {
           <img src="/logo.png" className="w-[80px] object-cover" />
         </div>
         <div>
-          <LoginButton icon='' images=''/>
+          <LoginButton icon='fa-solid fa-bars' images=''/>
         </div>
       </div>
     </div>
