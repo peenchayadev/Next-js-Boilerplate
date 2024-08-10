@@ -1,5 +1,5 @@
+'use client'
 import React from 'react'
-
 import { LoginButton } from './LoginButton'
 
 export const Navbar = () => {
@@ -8,12 +8,18 @@ export const Navbar = () => {
   //---------------------
   return (
     <div className="bg-white w-full h-[70px] shadow-sm px-[60px] py-[10px]">
-      <div className="flex items-center">
+      <div className="flex items-center justify-between cursor-pointer">
         <div>
-          <img src="/logo.png" className="w-[80px] object-cover" />
+          <a href="/">
+            <img src="/logo.png" className="w-[80px] object-cover" />
+          </a>
         </div>
-        <div>
-          <LoginButton icon='fa-solid fa-bars' images=''/>
+        <div className="flex items-center gap-[10px]">
+          <div>ตั้งกระทู้</div>
+          <div>คอมมูนิตี้</div>
+          <div>
+            <LoginButton images="" onClick={() => {}} />
+          </div>
         </div>
       </div>
     </div>
