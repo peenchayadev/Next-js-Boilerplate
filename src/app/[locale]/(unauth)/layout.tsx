@@ -1,17 +1,11 @@
+import { ReactNode } from 'react'
 
-
-import { unstable_setRequestLocale } from 'next-intl/server';
-
-
-
-export default function Layout(props: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
-  unstable_setRequestLocale(props.params.locale);
-  
-
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <div></div>
-  );
+    <html>
+      <body>
+        {children}
+      </body>
+    </html>
+  )
 }

@@ -1,24 +1,8 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import React from "react";
 
 
-export async function generateMetadata(props: { params: { locale: string } }) {
-  const t = await getTranslations({
-    locale: props.params.locale,
-    namespace: 'Index',
-  });
-
-  return {
-    title: t('meta_title'),
-    description: t('meta_description'),
-  };
-}
-
-export default function Index(props: { params: { locale: string } }) {
-  unstable_setRequestLocale(props.params.locale);
-
+export default function Index() {
   return (
-    <>
-      <div>ssss</div>
-    </>
+    <div>sssssssss</div>
   );
 }
