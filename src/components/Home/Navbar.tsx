@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Home() {
+export const Navbar = () => {
   //---------------------
   //   RENDER
   //---------------------
-  return <div className='text-red-300'>sssssssssssss</div>
+  return <div></div>
 }
