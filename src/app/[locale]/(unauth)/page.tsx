@@ -1,10 +1,13 @@
+'use client'
 import _ from 'lodash'
+
 import React from 'react'
 
 import { Navbar } from '@/components/Home/Navbar'
 import { SearchInput } from '@/components/Home/SearchInput'
 import { MenuButton } from '@/components/Home/MenuButton'
 import { Announce } from '@/components/Home/Announce'
+import { Highlight } from '@/components/Home/Highligt'
 
 export default function Home() {
   //---------------------
@@ -19,6 +22,9 @@ export default function Home() {
     { tile: 'แลกพอยต์', icon: '' },
     { tile: 'กิจกรรมพันทิป', icon: '' },
   ]
+
+ 
+
   //---------------------
   //   RENDER
   //---------------------
@@ -27,7 +33,7 @@ export default function Home() {
       <div>
         <Navbar />
       </div>
-      <div>
+      <div className=''>
         <img src="https://ptcdn.info/doodle/2024/66b5c85bcaac0a8b5c20c8c4_lw5pwzhspq.png" className="w-full object-cover" />
       </div>
       <div className="flex justify-center">
@@ -35,15 +41,18 @@ export default function Home() {
       </div>
       <div className="px-[60px]">
         <div className="mt-[60px] flex justify-center items-center">
-          {_.map(titleName, (item, i) => (
-            <div key={`menu${i}`} className='ml-[50px]'>
+          {_.map(titleName, (item : any, i) => (
+            <div key={`menu${i}`} className="ml-[50px]">
               <MenuButton icon={item.icon} title={item.tile} />
             </div>
           ))}
         </div>
       </div>
       <div>
-        <Announce/>
+        <Announce  />
+      </div>
+      <div>
+        <Highlight/>
       </div>
     </div>
   )
