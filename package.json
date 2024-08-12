@@ -9,7 +9,7 @@
     "start": "next start",
     "build-stats": "cross-env ANALYZE=true npm run build",
     "clean": "rimraf .next .swc out coverage",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "check-types": "tsc --noEmit --pretty",
     "test": "vitest run",
@@ -23,8 +23,7 @@
     "storybook:serve": "http-server storybook-static --port 6006 --silent",
     "serve-storybook": "run-s storybook:*",
     "test-storybook:ci": "start-server-and-test serve-storybook http://127.0.0.1:6006 test-storybook",
-    "prepare": "husky",
-    "lint": "eslint ."
+    "prepare": "husky"
   },
   "dependencies": {
     "@clerk/localizations": "^2.4.8",
@@ -96,7 +95,6 @@
     "cssnano": "^7.0.4",
     "dotenv-cli": "^7.4.2",
     "drizzle-kit": "^0.23.0",
-    "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-next": "^14.2.5",

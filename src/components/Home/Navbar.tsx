@@ -32,7 +32,7 @@ export const Navbar = () => {
             </div>
           </div>
           <div>
-            <LoginButton images="" icon="fa-solid fa-bars" onClick={() => {}} />
+            <LoginButton  icon="fa-solid fa-bars"  />
           </div>
         </div>
       </div>

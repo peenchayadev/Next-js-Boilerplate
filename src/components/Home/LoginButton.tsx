@@ -2,9 +2,7 @@ import classNames from 'classnames'
 import React, { useState } from 'react'
 
 interface LoginButtonProps {
-  onClick: () => void
   icon: string
-  images: string
 }
 
 export const LoginButton = (props: LoginButtonProps) => {
