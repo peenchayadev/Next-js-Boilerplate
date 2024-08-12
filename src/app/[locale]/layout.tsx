@@ -1,8 +1,6 @@
-import '@/styles/global.css';
-
-
-import Head from 'next/head'
+import '@/styles/global.css'
 import { ReactNode } from 'react'
+import ReduxProvider from '../Provider'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   //---------------------
@@ -10,10 +8,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   //---------------------
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-      </Head>
-      <body>{children}</body>
+      </head>
+      <body>
+        <ReduxProvider>{children}</ReduxProvider>
+      </body>
     </html>
   )
 }
