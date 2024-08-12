@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { defineConfig } from 'checkly';
-import { EmailAlertChannel, Frequency } from 'checkly/constructs';
+import { defineConfig } from 'checkly'
+import { EmailAlertChannel, Frequency } from 'checkly/constructs'
 
 const emailChannel = new EmailAlertChannel('email-channel-1', {
   // FIXME: add your own email address, Checkly will send you an email notification if a check fails
   address: 'contact@creativedesignsguru.com',
   sendDegraded: true,
-});
+})
 
 export const config = defineConfig({
   projectName: 'Next.js Boilerplate',
@@ -33,6 +33,6 @@ export const config = defineConfig({
     runLocation: 'eu-west-1',
     reporters: ['list'],
   },
-});
+})
 
-export default config;
+export default config

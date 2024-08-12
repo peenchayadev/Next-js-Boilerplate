@@ -10,21 +10,20 @@ interface HighlightItem {
 }
 
 interface HighlightState {
-  data: HighlightItem[];
-  loading: boolean;
-  error: string | null;
+  data: HighlightItem[]
+  loading: boolean
+  error: string | null
 }
-
 
 const initialState: HighlightState = {
   data: [],
   loading: false,
   error: null,
-};
+}
 
 // Define the async thunk for fetching data
 export const fetchHighlightData = createAsyncThunk('highlights/fetchHighlightData', async () => {
-  const timestamp = new Date().getTime(); // Timestamp ปัจจุบันเพื่อบังคับให้แคชถูกข้าม
+  const timestamp = new Date().getTime() // Timestamp ปัจจุบันเพื่อบังคับให้แคชถูกข้าม
   const response = await axios.get(`https://pantip.com/api/forum-service/home/get_highlight?cache_bust=${timestamp}`, {
     method: 'get',
     headers: {
@@ -55,15 +54,15 @@ const highlightSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchHighlightData.pending, (state) => {
-        state.loading = true;
+        state.loading = true
       })
       .addCase(fetchHighlightData.fulfilled, (state, action) => {
-        state.loading = false;
-        state.data = action.payload;
+        state.loading = false
+        state.data = action.payload
       })
       .addCase(fetchHighlightData.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message || 'Failed to fetch highlights';
+        state.loading = false
+        state.error = action.error.message || 'Failed to fetch highlights'
       })
   },
 })
