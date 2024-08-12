@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
-import { NextIntlClientProvider } from 'next-intl'
+import type { Meta, StoryObj } from '@storybook/react';
+import { userEvent, within } from '@storybook/test';
+import { NextIntlClientProvider } from 'next-intl';
 
-import messages from '@/locales/en.json'
+import messages from '@/locales/en.json';
 
-import { BaseTemplate } from './BaseTemplate'
+import { BaseTemplate } from './BaseTemplate';
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
 const meta = {
@@ -22,10 +22,10 @@ const meta = {
       </NextIntlClientProvider>
     ),
   ],
-} satisfies Meta<typeof BaseTemplate>
+} satisfies Meta<typeof BaseTemplate>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const BaseWithReactComponent = {
   args: {
@@ -37,7 +37,7 @@ export const BaseWithReactComponent = {
       </>
     ),
   },
-} satisfies Story
+} satisfies Story;
 
 export const BaseWithString = {
   args: {
@@ -49,7 +49,7 @@ export const BaseWithString = {
       </>
     ),
   },
-} satisfies Story
+} satisfies Story;
 
 // More on interaction testing: https://storybook.js.org/docs/7.0/react/writing-tests/interaction-testing
 export const BaseWithHomeLink: Story = {
@@ -63,9 +63,9 @@ export const BaseWithHomeLink: Story = {
     ),
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const link = canvas.getByText('Link 1')
+    const canvas = within(canvasElement);
+    const link = canvas.getByText('Link 1');
 
-    await userEvent.click(link)
+    await userEvent.click(link);
   },
-} satisfies Story
+} satisfies Story;
