@@ -46,13 +46,11 @@ export const Announce = () => {
     try {
       const response = await axios.request<AnnounceResponse>(config)
       console.log('API Response:', response.data)
-      setAnnounceData(response.data.data || []) 
+      setAnnounceData(response.data.data || [])
     } catch (error) {
       console.error('Error fetching announce data:', error)
     }
   }
-
-
 
   useEffect(() => {
     fetchAnnounceData()
@@ -71,11 +69,9 @@ export const Announce = () => {
           announceData.map((item) => (
             <div key={item.announce_id} className="py-4">
               <div className="pl-[20px]">
-               
                 <p>
-                <div dangerouslySetInnerHTML={{ __html: item.display_message }} /> 
+                  <div dangerouslySetInnerHTML={{ __html: item.display_message }} />
                 </p>
-                
               </div>
             </div>
           ))

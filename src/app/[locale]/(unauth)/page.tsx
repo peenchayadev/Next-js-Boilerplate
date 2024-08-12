@@ -47,7 +47,7 @@ export default function Home() {
   //   RENDER
   //---------------------
   return (
-    <div className="w-full h-screen"> 
+    <div className="w-full h-screen">
       <div>
         <Navbar />
         <div className="flex justify-center ">
@@ -72,11 +72,10 @@ export default function Home() {
         </div>
         <div className="border border-b-[1px] border-slate-100 mt-[30px]"></div>
       </div>
-     
-        <div className="mt-[30px] gap-4 flex ">
-          <HighlightCard />
-        </div>
-      
+
+      <div className="mt-[30px] gap-4 flex ">
+        <HighlightCard />
+      </div>
     </div>
   )
 }
