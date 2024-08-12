@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import classNames from 'classnames'
+import React, { useState } from 'react'
 
 interface LoginButtonProps {
   onClick: () => void
@@ -24,10 +24,10 @@ export const LoginButton = (props: LoginButtonProps) => {
     >
       {isOpen && <LoginModal />}
       <div onClick={() => setIsOpen(!isOpen)} onKeyDown={() => setIsOpen(!isOpen)}>
-        <div className="flex justify-center items-center">
-          <i className={classNames(props.icon)}></i>
-          <div className="bg-slate-600 rounded-full w-[32px] h-[32px] border border-[#DDDDDD] ml-[10px] flex items-center justify-center">
-            <i className="fa-solid fa-user text-white text-[25px] translate-y-[4px]"></i>
+        <div className="flex items-center justify-center">
+          <i className={classNames(props.icon)} />
+          <div className="ml-[10px] flex size-[32px] items-center justify-center rounded-full border border-[#DDDDDD] bg-slate-600">
+            <i className="fa-solid fa-user translate-y-[4px] text-[25px] text-white" />
           </div>
         </div>
       </div>
@@ -41,10 +41,10 @@ export const LoginModal = () => {
   //---------------------
 
   return (
-    <div className="z-[10] fixed bg-white border border-[#DDDDDD] w-[200px] p-[10px] right-[61px] translate-y-[45px] rounded-3xl">
+    <div className="fixed right-[61px] z-10 w-[200px] translate-y-[45px] rounded-3xl border border-[#DDDDDD] bg-white p-[10px]">
       <div>
-        <div className="mb-[5px]  hover:bg-slate-300 transition-all rounded-md px-[5px]">ลงทะเบียน</div>
-        <div className="hover:bg-slate-300 transition-all rounded-md px-[5px]">เข้าสู่ระบบ</div>
+        <div className="mb-[5px]  rounded-md px-[5px] transition-all hover:bg-slate-300">ลงทะเบียน</div>
+        <div className="rounded-md px-[5px] transition-all hover:bg-slate-300">เข้าสู่ระบบ</div>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import _ from 'lodash'
 import axios from 'axios'
+import _ from 'lodash'
+import React, { useEffect, useState } from 'react'
 
 interface HighlightItem {
   name: string
@@ -18,7 +18,7 @@ export const HighlightCard = () => {
   const [highlightData, setHighlightData] = useState<HighlightItem[]>([])
 
   const fetchAnnounceData = async () => {
-    let config = {
+    const config = {
       method: 'get',
       maxBodyLength: Infinity,
       url: 'https://pantip.com/api/forum-service/home/get_highlight',
@@ -55,18 +55,18 @@ export const HighlightCard = () => {
   }, [])
 
   return (
-    <div className="max-w-[1900px] px-[105px] mt-[30px] rounded-2xl overflow-hidden ">
-      <div className="py-4 px-6 flex items-center justify-between">
-        <p className="text-xl titleH">Highlight</p>
+    <div className="mt-[30px] max-w-[1900px] overflow-hidden rounded-2xl px-[105px] ">
+      <div className="flex items-center justify-between px-6 py-4">
+        <p className="titleH text-xl">Highlight</p>
       </div>
-      <div className='flex flex-wrap gap-[14px] mt-[20px]'>
+      <div className="mt-[20px] flex flex-wrap gap-[14px]">
         {_.map(highlightData, (item, i) => (
-          <div className="w-[270px] h-[270px] rounded-xl overflow-hidden border border-[#DDDDDD]  ">
+          <div className="size-[270px] overflow-hidden rounded-xl border border-[#DDDDDD]  ">
             <div key={i} className="flex-1">
-              <div className="w-full h-[200px] rounded-t-xl overflow-hidden">
-                <img src={item.image_url[0]} className="w-full h-full object-cover" />
+              <div className="h-[200px] w-full overflow-hidden rounded-t-xl">
+                <img src={item.image_url[0]} className="size-full object-cover" />
               </div>
-              <div className="px-[10px] py-[5px] titleS">{item.name}</div>
+              <div className="titleS px-[10px] py-[5px]">{item.name}</div>
             </div>
           </div>
         ))}

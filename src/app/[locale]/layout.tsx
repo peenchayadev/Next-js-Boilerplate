@@ -1,5 +1,7 @@
 import '@/styles/global.css'
-import { ReactNode } from 'react'
+
+import type { ReactNode } from 'react'
+
 import ReduxProvider from '../Provider'
 
 export default function RootLayout({ children }: { children: ReactNode }) {

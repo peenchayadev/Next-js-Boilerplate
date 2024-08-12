@@ -1,6 +1,5 @@
-import _ from 'lodash'
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface AnnounceItem {
   announce_id: string
@@ -19,7 +18,7 @@ export const Announce = () => {
 
   // Fetch announcement data
   const fetchAnnounceData = async () => {
-    let config = {
+    const config = {
       method: 'get',
       maxBodyLength: Infinity,
       url: 'https://pantip.com/api/forum-service/forum/get_announce?room=homepage&limit=3',
@@ -60,8 +59,8 @@ export const Announce = () => {
   //   RENDER
   //---------------------
   return (
-    <div className="bg-white border border-[#DDDDDD] w-full max-w-[1200px] mx-auto mt-[50px] rounded-2xl shadow-md overflow-hidden">
-      <div className="py-4 px-6 flex items-center justify-between border-b border-[#DDDDDD]">
+    <div className="mx-auto mt-[50px] w-full max-w-[1200px] overflow-hidden rounded-2xl border border-[#DDDDDD] bg-white shadow-md">
+      <div className="flex items-center justify-between border-b border-[#DDDDDD] px-6 py-4">
         <p className="text-xl font-semibold">Announce</p>
       </div>
       <div onClick={() => {}} className="py-4">

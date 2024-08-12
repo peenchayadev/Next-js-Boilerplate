@@ -1,12 +1,13 @@
 'use client'
+
 import _ from 'lodash'
 import React from 'react'
 
+import { HighlightCard } from '@/components/Home/Highligt-card'
+import { MenuButton } from '@/components/Home/MenuButton'
 import { Navbar } from '@/components/Home/Navbar'
 import { SearchInput } from '@/components/Home/SearchInput'
-import { MenuButton } from '@/components/Home/MenuButton'
 import { SlideIcon } from '@/components/Home/SlideIcon'
-import { HighlightCard } from '@/components/Home/Highligt-card'
 
 export default function Home() {
   //---------------------
@@ -47,7 +48,7 @@ export default function Home() {
   //   RENDER
   //---------------------
   return (
-    <div className="w-full h-screen">
+    <div className="h-screen w-full">
       <div>
         <Navbar />
         <div className="flex justify-center ">
@@ -55,25 +56,25 @@ export default function Home() {
         </div>
       </div>
       <div className="px-[60px]">
-        <div className="mt-[30px] flex justify-center items-center">
+        <div className="mt-[30px] flex items-center justify-center">
           {_.map(titleName, (item, i) => (
             <div key={`menu${i}`} className="ml-[50px]">
               <MenuButton icon={item.icon} title={item.tile} />
             </div>
           ))}
         </div>
-        <div className="border border-b-[1px] border-slate-100 mt-[30px]"></div>
-        <div className="flex justify-center items-center">
+        <div className="mt-[30px] border border-slate-100" />
+        <div className="flex items-center justify-center">
           {_.map(IconName, (item, i) => (
             <div key={`menu${i}`} className="ml-[30px] mt-[10px]">
               <SlideIcon icon={item.icon} title={item.tile} />
             </div>
           ))}
         </div>
-        <div className="border border-b-[1px] border-slate-100 mt-[30px]"></div>
+        <div className="mt-[30px] border border-slate-100" />
       </div>
 
-      <div className="mt-[30px] gap-4 flex ">
+      <div className="mt-[30px] flex gap-4 ">
         <HighlightCard />
       </div>
     </div>
