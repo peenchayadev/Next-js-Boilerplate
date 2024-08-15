@@ -12,8 +12,7 @@ const LoginModal = () => {
   return (
     <div className="absolute right-[50px] mobile:right-[20px] z-10 w-[200px] translate-y-[45px] rounded-3xl border border-[#DDDDDD] bg-white p-[10px]">
       <div>
-        <div className="mb-[5px] rounded-md px-[5px] transition-all hover:bg-slate-300">ลงทะเบียน</div>
-        <div className="border border-b-slate-100"></div>
+        <div className="mb-[5px] rounded-md px-[5px] transition-all hover:bg-slate-300 border border-b-slate-100">ลงทะเบียน</div>
         <div className="rounded-md px-[5px] transition-all hover:bg-slate-300">เข้าสู่ระบบ</div>
       </div>
     </div>
