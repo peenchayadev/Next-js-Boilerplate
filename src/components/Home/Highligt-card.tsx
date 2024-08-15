@@ -55,14 +55,14 @@ export const HighlightCard = () => {
   }, [])
 
   return (
-    <div className="mt-[30px] max-w-[1900px] overflow-hidden rounded-2xl px-[105px] ">
+    <div className="mt-[30px] max-w-[1900px] overflow-hidden rounded-2xl px-[105px] mobile:px-[45px] mobile:ml-[10px]">
       <div className="flex items-center justify-between px-6 py-4">
         <p className="titleH text-xl">Highlight</p>
       </div>
       <div className="mt-[20px] flex flex-wrap gap-[14px]">
         {_.map(highlightData, (item, i) => (
-          <div className="size-[270px] overflow-hidden rounded-xl border border-[#DDDDDD]  ">
-            <div key={i} className="flex-1">
+          <div className="size-[270px] overflow-hidden rounded-xl border border-[#DDDDDD] cursor-pointer  ">
+            <div key={i} className="grid-flow-col-dense">
               <div className="h-[200px] w-full overflow-hidden rounded-t-xl">
                 <img src={item.image_url[0]} className="size-full object-cover" />
               </div>

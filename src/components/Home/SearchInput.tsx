@@ -3,7 +3,7 @@ import React from 'react'
 export const SearchInput = () => {
   return (
     <div className="flex justify-center">
-      <div className="absolute top-0 flex h-[57px] w-full max-w-[800px] translate-y-[80px] items-center rounded-3xl border border-slate-300 bg-white shadow-md">
+      <div className="absolute top-0 flex h-[57px] w-full max-w-[1200px] translate-y-[80px] items-center rounded-3xl border border-slate-300 bg-white shadow-md">
         <div className="ml-[20px] flex grow items-center">
           <input type="text" className="h-[20px] grow border-none outline-none" placeholder="ค้นหาบน Pantip" />
         </div>

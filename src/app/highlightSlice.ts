@@ -21,7 +21,7 @@ const initialState: HighlightState = {
   error: null,
 }
 
-// Define the async thunk for fetching data
+// กำหนด async thunk สำหรับการดึงข้อมูล
 export const fetchHighlightData = createAsyncThunk('highlights/fetchHighlightData', async () => {
   const timestamp = new Date().getTime() // Timestamp ปัจจุบันเพื่อบังคับให้แคชถูกข้าม
   const response = await axios.get(`https://pantip.com/api/forum-service/home/get_highlight?cache_bust=${timestamp}`, {
@@ -54,15 +54,14 @@ const highlightSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchHighlightData.pending, (state) => {
-        state.loading = true
+        // ใช้การสร้าง state ใหม่แทนการเปลี่ยนแปลง state เดิม
+        return { ...state, loading: true }
       })
       .addCase(fetchHighlightData.fulfilled, (state, action) => {
-        state.loading = false
-        state.data = action.payload
+        return { ...state, loading: false, data: action.payload }
       })
       .addCase(fetchHighlightData.rejected, (state, action) => {
-        state.loading = false
-        state.error = action.error.message || 'Failed to fetch highlights'
+        return { ...state, loading: false, error: action.error.message || 'Failed to fetch highlights' }
       })
   },
 })

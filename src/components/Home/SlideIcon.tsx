@@ -12,7 +12,7 @@ export const SlideIcon = (props: MenuButtonProps) => {
       <div className="flex size-[60px] items-center justify-center rounded-full">
         <i className={classNames(props.icon, 'text-[23px] text-slate-700 transition-all duration-100 group-hover:text-black')} />
       </div>
-      <p className="titleSS text-center">{props.title}</p>
+      <p className="titleSS text-center text-nowrap">{props.title}</p>
     </div>
   )
 }

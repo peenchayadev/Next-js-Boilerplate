@@ -30,46 +30,45 @@ export default function Home() {
     { tile: 'แก็ดเจ็ด', icon: 'fa-solid fa-star' },
     { tile: 'ไกลบ้าน', icon: 'fa-regular fa-compass' },
     { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
-    { tile: 'กรุงโซล', icon: 'fa-solid fa-gift' },
-    { tile: 'การ์ตูน', icon: 'fa-solid fa-gift' },
-    { tile: 'แกลเลอรี่', icon: 'fa-solid fa-gift' },
-    { tile: 'จตุจักร', icon: 'fa-solid fa-gift' },
-    { tile: 'เฉลิมไทย', icon: 'fa-solid fa-gift' },
-    { tile: 'ชานเรือน', icon: 'fa-solid fa-gift' },
-    { tile: 'ดิโอลด์สยาม', icon: 'fa-solid fa-gift' },
-    { tile: 'ถนนนักเขียน', icon: 'fa-solid fa-gift' },
-    { tile: 'บางขุนพรหม', icon: 'fa-solid fa-gift' },
-    { tile: 'พรหมชาติ', icon: 'fa-solid fa-gift' },
-    { tile: 'ภูมิภาค', icon: 'fa-solid fa-gift' },
-    { tile: 'ชายคา', icon: 'fa-solid fa-gift' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
+    { tile: 'เฉลิมกรุง', icon: 'fa-regular fa-star' },
   ]
 
   //---------------------
   //   RENDER
   //---------------------
   return (
-    <div className="h-screen w-full">
+    <div className=" w-full mx-auto mb-[50px]">
       <div>
         <Navbar />
-        <div className="flex justify-center ">
+        <div className="flex justify-center w-full tablet:hidden mobile:hidden">
           <SearchInput />
         </div>
       </div>
-      <div className="px-[60px]">
-        <div className="mt-[30px] flex items-center justify-center">
+      <div className="px-[60px] overflow-hidden mobile:px-[5px]">
+        <div className="mt-[30px] flex items-center justify-center mobile:justify-start mobile:overflow-x-scroll tablet:overflow-x-scroll tablet:justify-start ">
           {_.map(titleName, (item, i) => (
-            <div key={`menu${i}`} className="ml-[50px]">
+            <div key={`menu${i}`} className="ml-[50px] mobile:ml-[26px]">
               <MenuButton icon={item.icon} title={item.tile} />
             </div>
           ))}
         </div>
         <div className="mt-[30px] border border-slate-100" />
-        <div className="flex items-center justify-center">
-          {_.map(IconName, (item, i) => (
-            <div key={`menu${i}`} className="ml-[30px] mt-[10px]">
-              <SlideIcon icon={item.icon} title={item.tile} />
-            </div>
-          ))}
+        <div className="flex items-center justify-center ">
+          <div className="flex items-center justify-center mobile:justify-start mobile:overflow-x-scroll tablet:overflow-x-scroll tablet:justify-start overflow-y-hidden h-[80px]">
+            {_.map(IconName, (item, i) => (
+              <div key={`menu${i}`} className="ml-[30px] mt-[10px] mobile:ml-[10px]">
+                <SlideIcon icon={item.icon} title={item.tile} />
+              </div>
+            ))}
+          </div>
         </div>
         <div className="mt-[30px] border border-slate-100" />
       </div>
